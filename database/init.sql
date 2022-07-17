@@ -1,2 +1,2 @@
-CREATE USER musicroom PASSWORD '{CHANGE_ME!}';
+CREATE USER musicroom PASSWORD '<change_me>';
 CREATE DATABASE musicroom OWNER musicroom;

@@ -13,6 +13,8 @@ public class AppUser {
     private String name;
     @Basic(optional = false)
     private String password;
+    @Basic(optional = false)
+    private Boolean active;
 
     public AppUser() {
     }
@@ -45,6 +47,14 @@ public class AppUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
 }

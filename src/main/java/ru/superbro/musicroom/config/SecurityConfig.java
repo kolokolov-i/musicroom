@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf()
             .disable(); // TODO enable csrf
         http.authorizeRequests()
-            .antMatchers("/", "/login", "/logout")
+            .antMatchers("/", "login", "/logout")
             .permitAll();
         http.authorizeRequests()
             .antMatchers("/file/*", "/public")
@@ -45,21 +45,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
             .and()
             .exceptionHandling()
-            .accessDeniedPage("/403");
+            .accessDeniedPage("/error");
         http.authorizeRequests()
             .and()
             .formLogin()
-            .loginProcessingUrl("/j_spring_security_check")
+            .loginProcessingUrl("/login-check")
             .loginPage("/login")
-            .defaultSuccessUrl("/index")
-            .failureUrl("/login-error")
+            .defaultSuccessUrl("/home")
+            .failureUrl("/error")
             .usernameParameter("username")
             .passwordParameter("password");
         http.authorizeRequests()
             .and()
             .logout()
             .logoutUrl("/logout")
-            .logoutSuccessUrl("/logoutSuccessful");
+            .logoutSuccessUrl("/login");
     }
 
     @Override
