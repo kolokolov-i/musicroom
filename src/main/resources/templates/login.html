@@ -1,22 +1,44 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
 
 <head>
     <meta charset="UTF-8" />
     <title>MusicRoom</title>
+    <link rel="stylesheet" href="/styles/mur-w.css" type="text/css">
 </head>
 
 <body>
-    <h1>Login</h1>
-    <form name="auth" action="/login-check" method="post">
-        <p>User:
-            <input type="text" name="username" value="" />
-        </p>
-        <p>Password:
-            <input type="password" name="password" />
-        </p>
-        <input name="submit" type="submit" value="Login" />
-    </form>
+    <div id="board">
+        <div class="window pos-center" id="loginDialog">
+            <div class="title">Вход в MusicRoom</div>
+            <div class="box">
+                <form name="auth" action="/login-check" method="post">
+                    <div class="head-panel">
+                        <div class="pos-center">
+                            <img class="logo-text" src="/images/icons/text.png" alt="Music Room" />
+                            <img class="logo-cube" src="/images/icons/cube64.png" alt="Cube" />
+                        </div>
+                    </div>
+                    <div class="stripe"></div>
+                    <div class="body-panel">
+                        <label>
+                            <div class="text-label">
+                                Пользователь:
+                            </div>
+                            <input class="text-input" type="text" name="username" value="" />
+                        </label>
+                        <label>
+                            <div class="text-label">
+                                Пароль:
+                            </div>
+                            <input class="text-input" type="password" name="password" />
+                        </label>
+                        <input class="button" name="submit" type="submit" value="Войти" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

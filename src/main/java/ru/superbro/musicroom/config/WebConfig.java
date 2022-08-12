@@ -32,6 +32,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("classpath:/templates/");
         templateResolver.setSuffix(".html");
+        templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCacheable(false); // TODO set true
         return templateResolver;
